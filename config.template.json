@@ -1,0 +1,23 @@
+{
+    "port": 8080,
+    "tlsPort": 0,
+    "authSecret": "${AUTH_SECRET}",
+    "buildConcurrency": ${BUILD_CONCURRENCY:-0},
+    "buildTimeout": ${BUILD_TIMEOUT:-30},
+    "workDir": "~/.esmd",
+    "cache": "memory:default",
+    "database": "bolt:~/.esmd/esm.db",
+    "storage": "local:~/.esmd/storage",
+    "logDir": "~/.esmd/log",
+    "logLevel": "${LOG_LEVEL:-info}",
+    "npmRegistry": "${NPM_REGISTRY:-https://registry.npmjs.org/}",
+    "npmToken": "${NPM_TOKEN}",
+    "npmUser": "${NPM-USER}",
+    "npmPassword": "${NPM_PASSWORD}",
+    "npmRegistries": {},
+    "minify": ${MINIFY:-true},
+    "disableCompression": ${DISABLE_COMPRESSION:-false},
+    "disableSourceMap": ${DISABLE_SOURCEMAP:-false},
+    "banList": {},
+    "allowList": {}
+}

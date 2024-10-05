@@ -1,0 +1,11 @@
+# flyctl launch added from .gitignore
+**\.DS_Store
+**\.idea
+**\.vscode
+**\*.log
+**\esmd
+**\.esmd
+**\node_modules
+**\dist
+fly.toml
+config.template.json 	
