@@ -28,6 +28,7 @@ primary_region = "syd"
   auto_extend_size_threshold = 90
   auto_extend_size_limit = "25GB"
   auto_extend_size_increment = "1GB"
+  snapshot_retention = 1
 
 [http_service]
   internal_port = 8080
