@@ -1,5 +1,6 @@
-const { readFileSync, existsSync, writeFileSync } = require("fs");
-const { dirname, join } = require("path");
+const { builtinModules } = require("node:module");
+const { readFileSync, existsSync } = require("node:fs");
+const { dirname, join } = require("node:path");
 const { parse } = require("esm-cjs-lexer");
 const { env, stdin, stdout } = process;
 

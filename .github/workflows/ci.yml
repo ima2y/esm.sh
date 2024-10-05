@@ -47,7 +47,7 @@ jobs:
       - name: Setup Deno
         uses: denoland/setup-deno@main
         with:
-          deno-version: rc
+          deno-version: stable
 
       - name: Run `go test`
         run: go test ./server ./server/storage -v
