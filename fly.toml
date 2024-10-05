@@ -1,45 +1,40 @@
-# fly.toml app configuration file generated for esm-ay-ms on 2024-10-06T07:57:54+11:00
+# fly.toml app configuration file generated for esm-ay-ms on 2024-10-06T10:22:32+11:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "esm-ay-ms"
-primary_region = "syd"
-
-[env]
-  # Disable http compression, default is false.
-  DISABLE_COMPRESSION = "false"
-  #  Disable generating source map for build JS/CSS files, default is false. 
-  DISABLE_SOURCEMAP = "false"
-  #  Minify the build JS/CSS files, default is true.
-  MINIFY = "true" 
-  # The log level, available values are ["debug", "info", "warn", "error"], default is "info".
-  LOG_LEVEL = "info" 
-  #  The global NPM registry, default is "https # //registry.npmjs.org/".
-  NPM_REGISTRY = "https://registry.npmjs.org/" 
-  STORAGE_ROOT_DIR = '/data'
+app = 'esm-ay-ms'
+primary_region = 'syd'
 
 [build]
 
-[mounts]
-  source = "esm_storage"
-  destination = "/data"
-  initial_size = "5gb"
-  auto_extend_size_threshold = 90
-  auto_extend_size_limit = "25GB"
-  auto_extend_size_increment = "1GB"
+[env]
+  DISABLE_COMPRESSION = 'false'
+  DISABLE_SOURCEMAP = 'false'
+  LOG_LEVEL = 'info'
+  MINIFY = 'true'
+  NPM_REGISTRY = 'https://registry.npmjs.org/'
+  STORAGE_ROOT_DIR = '/data'
+
+[[mounts]]
+  source = 'esm_storage'
+  destination = '/data'
+  initial_size = '5gb'
   snapshot_retention = 1
+  auto_extend_size_threshold = 90
+  auto_extend_size_increment = '1GB'
+  auto_extend_size_limit = '25GB'
 
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = "off"
+  auto_stop_machines = 'off'
   auto_start_machines = true
   min_machines_running = 1
-  processes = ["app"]
+  processes = ['app']
 
 [[vm]]
-  memory = "2gb"
-  cpu_kind = "shared"
+  size = 'shared-cpu-1x'
+  memory = '2gb'
+  cpu_kind = 'shared'
   cpus = 2
-  size = "shared-cpu-1x"
